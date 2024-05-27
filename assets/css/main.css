@@ -2275,7 +2275,8 @@ section,
 
   .btn-get-started,
   .btn-watch-video {
-    width: 100%; /* Make the buttons take the full width */
+    /* width: 100%; Make the buttons take the full width */
     text-align: center; /* Center the text within the buttons */
+    font-weight: bolder;
   }
 }
