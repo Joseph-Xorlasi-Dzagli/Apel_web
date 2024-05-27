@@ -2222,8 +2222,8 @@ section,
 }
 
 .npc-image {
-    display: none; /* Hide image for PC */
-  }
+  display: none; /* Hide image for PC */
+}
 
 @media only screen and (max-width: 767px) {
   .flex-item {
@@ -2236,7 +2236,6 @@ section,
   .npc-image {
     display: block; /* show image for PC */
   }
-
 }
 
 @media only screen and (min-width: 768px) {
@@ -2264,9 +2263,8 @@ section,
 
 .button-container {
   gap: 1rem; /* Adds space between the buttons */
-  flex: 100%;
+  display: flex;
   align-items: center; /* Center the buttons horizontally */
-
 }
 
 @media (max-width: 768px) {
@@ -2274,8 +2272,9 @@ section,
     flex-direction: column;
     align-items: center; /* Center the buttons horizontally */
   }
-  
-  .btn-get-started, .btn-watch-video {
+
+  .btn-get-started,
+  .btn-watch-video {
     width: 100%; /* Make the buttons take the full width */
     text-align: center; /* Center the text within the buttons */
   }
