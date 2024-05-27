@@ -78,7 +78,7 @@ a {
 }
 
 a:hover {
-  color: color-mix(in srgb, var(--accent-color), transparent 25%);
+  color: color-mix(in srgb, rgb(0, 171, 196, 0.75));
   text-decoration: none;
 }
 
@@ -137,7 +137,7 @@ h6 {
 .header .btn-getstarted:hover,
 .header .btn-getstarted:focus:hover {
   color: var(--contrast-color);
-  background: color-mix(in srgb, var(--accent-color), transparent 15%);
+  background: color-mix(in srgb, rgb(0, 171, 196, 0.85));
 }
 
 @media (max-width: 1200px) {
@@ -388,7 +388,7 @@ h6 {
     justify-content: center;
     border-radius: 50%;
     transition: 0.3s;
-    background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+    background-color: color-mix(in srgb, rgb(0, 171, 196, 0.9));
   }
 
   .navmenu a i:hover,
@@ -527,7 +527,7 @@ h6 {
 }
 
 .footer .footer-newsletter .newsletter-form input[type="submit"]:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+  background: color-mix(in srgb, rgb(0, 171, 196, 0.2));
 }
 
 .footer .footer-newsletter .error-message {
@@ -736,7 +736,7 @@ h6 {
 }
 
 .scroll-top:hover {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  background-color: color-mix(in srgb, rgb(0, 171, 196, 0.2));
   color: var(--contrast-color);
 }
 
@@ -835,7 +835,7 @@ section,
   display: block;
   width: 160px;
   height: 1px;
-  background: color-mix(in srgb, var(--default-color), transparent 100%);
+  background: color-mix(in srgb, var(--default-color), transparent 60%);
   left: 0;
   right: 0;
   bottom: 1px;
@@ -902,7 +902,7 @@ section,
 
 .hero .btn-get-started:hover {
   color: var(--var-color);
-  background: color-mix(in srgb, var(--accent-color), transparent 15%);
+  background: color-mix(in srgb, rgb(0, 171, 196, 0.15));
 }
 
 .hero .btn-watch-video {
@@ -1918,7 +1918,7 @@ section,
 .contact .info-item i {
   font-size: 20px;
   color: var(--accent-color);
-  background: color-mix(in srgb, var(--accent-color), transparent 92%);
+  background: color-mix(in srgb, rgb(0, 171, 196, 0.9));
   width: 44px;
   height: 44px;
   display: flex;
@@ -2071,7 +2071,7 @@ section,
   .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
-  background-color: color-mix(in srgb, var(--default-color), transparent 85%);
+  background-color: color-mix(in srgb, rgb(0, 171, 196, 0.85));
   opacity: 1;
 }
 
