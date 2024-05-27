@@ -835,7 +835,7 @@ section,
   display: block;
   width: 160px;
   height: 1px;
-  background: color-mix(in srgb, var(--default-color), transparent 60%);
+  background: color-mix(in srgb, var(--default-color));
   left: 0;
   right: 0;
   bottom: 1px;
