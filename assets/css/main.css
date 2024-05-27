@@ -2277,6 +2277,10 @@ section,
   .btn-watch-video {
     /* width: 100%; Make the buttons take the full width */
     text-align: center; /* Center the text within the buttons */
-    font-weight: bolder;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 10px 28px 12px 28px;
+
   }
 }
+
