@@ -974,7 +974,7 @@ section,
 @media (max-width: 640px) {
   .hero {
     height: 110vw;
-    top: 60px;
+    margin-top: 60px;
   }
 
   .hero-overlay h1 {
