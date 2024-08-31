@@ -891,7 +891,7 @@ section,
   position: absolute;
   top: 30%;
   left: 4vw;
-  width: 40vw;
+  width: 45vw;
   z-index: 10;
   text-align: left;
   color: white;
@@ -899,9 +899,9 @@ section,
 
 .hero-overlay h1 {
   margin: 0;
-  font-size: 4vw;
+  font-size: 5vw;
   font-weight: bold;
-  line-height: 4vw;
+  line-height: 5vw;
   color: white;
 }
 
@@ -909,13 +909,13 @@ section,
   color: white;
   margin: 5px 0 2vw 0;
   font-size: 18px;
-  line-height: 1.5;
+  line-height: 30px;
 }
 
 .btn-get-started {
   color: var(--contrast-color);
   background: var(--accent-color);
-  font-size: 16px;
+  font-size: 18px;
   padding: 10px 25px;
   border-radius: 50px;
   transition: 0.3s;
@@ -931,7 +931,7 @@ section,
   display: flex; /* Ensures flex layout for centering */
   align-items: center; /* Centers content vertically */
   justify-content: center; /* Centers content horizontally */
-  font-size: 16px;
+  font-size: 18px;
   transition: 0.5s;
   margin-left: 25px;
   padding: 0 15px 0 10px;
@@ -942,7 +942,7 @@ section,
 }
 
 .btn-watch-video i {
-  font-size: 24px; /* Adjust icon size as needed */
+  font-size: 28px; /* Adjust icon size as needed */
   transition: 0.3s;
   color: white;
   margin-right: 8px;
@@ -991,7 +991,7 @@ section,
   }
 
   .hero .btn-get-started {
-    font-size: 14px;
+    font-size: 18px;
     padding: 10px 10px;
     width: 80vw;
     text-align: center;
@@ -1006,7 +1006,7 @@ section,
   }
 
   .hero .btn-watch-video {
-    font-size: 14px;
+    font-size: 18px;
     padding: 0 10px;
     margin-left: 0;
     /* padding: 0.7vw 2vw; */
@@ -2324,14 +2324,23 @@ section,
 
 @media (max-width: 868px) {
   .hero-overlay {
-    top: 30%;
-    width: 70vw;
+    top: 25%;
+    /* width: 70vw; */
+  }
+
+  .hero-overlay p {
+    font-size: 16px;
+    line-height: 25px;
   }
 
   .btn-get-started,
   .btn-watch-video {
-    font-size: 14px;
+    font-size: 18px;
     border-radius: 50px;
     width: auto; /* Auto width to fit content */
   }
+
+  .btn-watch-video i {
+  font-size: 28px; /* Adjust icon size as needed */
+}
 }
