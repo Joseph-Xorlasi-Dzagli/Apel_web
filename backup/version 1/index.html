@@ -589,8 +589,8 @@
                 data-aos="fade-up"
                 data-aos-delay="200">
                 <div class="row gy-4">
-                  <div class="col-md-12">
-                    <label for="subject-field" class="pb-2">Business Name</label>
+                  <div class="col-md-6">
+                    <label for="name-field" class="pb-2">Your Name</label>
                     <input
                       type="text"
                       name="name"
@@ -598,8 +598,9 @@
                       class="form-control"
                       required="" />
                   </div>
+
                   <div class="col-md-6">
-                    <label for="name-field" class="pb-2">Email</label>
+                    <label for="email-field" class="pb-2">Your Email</label>
                     <input
                       type="email"
                       class="form-control"
@@ -608,56 +609,24 @@
                       required="" />
                   </div>
 
-                  <div class="col-md-6">
-                    <label for="email-field" class="pb-2">Phone</label>
+                  <div class="col-md-12">
+                    <label for="subject-field" class="pb-2">Subject</label>
                     <input
                       type="text"
                       class="form-control"
-                      name="phone"
-                      id="phone-field"
+                      name="subject"
+                      id="subject-field"
                       required="" />
-                  </div>
-                  <div class="col-md-6">
-                    <label for="businessSize">Business Size</label>
-                    <select id="businessSize"
-                            name="businessSize"
-                            type="text"
-                            class="form-control">
-                        <option value="" selected disabled>Select your company size</option>
-                        <option value="small">Small (1-10 employees)</option>
-                        <option value="medium">Medium (11-50 employees)</option>
-                        <option value="large">Large (51+ employees)</option>
-                    </select>
-                  </div>
-
-                  <div class="col-md-6">
-                    <label for="Industry">Industry</label>
-                    <select id="Industry"
-                            name="Industry"
-                            type="text"
-                            class="form-control">
-                            <option value="" selected disabled>Select your business industry</option>
-                            <option value="tourism_hospitality">Tourism and Hospitality</option>
-                            <option value="events_recreation_entertainment">Events, Recreation & Entertainment</option>
-                            <option value="apparel_footwear">Apparel and Footwear</option>
-                            <option value="food_groceries">Food & Groceries</option>
-                            <option value="consumer_electronics">Consumer Electronics</option>
-                            <option value="beauty_cosmetics">Beauty and Cosmetics</option>
-                            <option value="health_care_pharmacy">Health Care & Pharmacy</option>
-                            <option value="home_furniture_supplies_services">Home Furniture, Supplies, Services</option>
-                            <option value="baby_childcare_products">Baby and Childcare Products</option>
-                            <option value="financial_service">Financial Service</option>
-                            <option value="transportation">Transportation</option>
-                    </select>
                   </div>
 
                   <div class="col-md-12">
-                    <label>Business Social Media Platforms</label>
-                    <p></p>
-                    <p><input type="checkbox" name="socialMedia" value="instagram"> Instagram</p>
-                    <p><input type="checkbox" name="socialMedia" value="facebook"> Facebook</p>
-                    <p><input type="checkbox" name="socialMedia" value="whatsapp"> WhatsApp</p>
-                    <p><input type="checkbox" name="socialMedia" value="tiktok"> TikTok</p>
+                    <label for="message-field" class="pb-2">Message</label>
+                    <textarea
+                      class="form-control"
+                      name="message"
+                      rows="10"
+                      id="message-field"
+                      required=""></textarea>
                   </div>
 
                   <div class="col-md-12 text-center">
@@ -667,7 +636,7 @@
                       Your message has been sent. Thank you!
                     </div>
 
-                    <button type="submit">Start free trial</button>
+                    <button type="submit">Get Started</button>
                   </div>
                 </div>
               </form>
