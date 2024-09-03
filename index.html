@@ -627,7 +627,8 @@ improve your sales.
             <div class="col-lg-7">
 
               <form
-                  action="https://script.google.com/macros/s/AKfycbznLoWONj9awq9iojhzeSOjfE33MdDHEDKZxHobVFY5jhgJ-BsBwZSOPYLXoS5epBOo/exec"
+                  action="",
+                  id="myForm"
                   method="post"
                   class="php-email-form"
                   data-aos="fade-up"
@@ -705,9 +706,9 @@ improve your sales.
 
                       <div class="col-md-12 text-center">
                           <div class="loading">Loading</div>
-                          <div class="error-message"></div>
+                          <!-- <div class="error-message"></div> -->
                           <div class="sent-message">
-                              Your message has been sent. Thank you!
+                            "You're now on our waiting list! You will enjoy one month of free early access when our product launches!"
                           </div>
 
                           <button type="submit">Start free trial</button>
@@ -889,6 +890,15 @@ improve your sales.
     <!-- Preloader -->
     <div id="preloader"></div>
 
+        <!-- Popup Screen -->
+    <div id="popup" class="popup-overlay">
+        <div class="popup-content">
+            <h2>Success!</h2>
+            <p>Your message has been sent. Thank you for joining the waitlist!</p>
+            <button id="close-popup">Close</button>
+        </div>
+    </div>
+
     <!-- Vendor JS Files -->
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/vendor/php-email-form/validate.js"></script>
@@ -898,8 +908,104 @@ improve your sales.
     <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
     <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
     <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-
-    <!-- Main JS File -->
     <script src="assets/js/main.js"></script>
+
+
+    <!--Main JS File-->
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('myForm');
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          displayError('An error occurred while processing your request.');
+        });
+      } else {
+        console.error('Form element not found');
+      }
+
+      function displayError(message) {
+        const errorMessageElement = document.getElementById('error-message');
+        if (errorMessageElement) {
+          errorMessageElement.innerHTML = message;
+        } else {
+          console.error('Error element not found');
+        }
+      }
+    });
+  </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Select the form element
+    const form = document.querySelector('.php-email-form');
+    
+    // Check if the form element exists
+    if (form) {
+      // Add an event listener to handle form submission
+      form.addEventListener('submit', async (e) => {
+        // Prevent the default form submission behavior
+        e.preventDefault();
+
+        // Retrieve all checked checkboxes
+        const checkboxes = document.querySelectorAll('input[name="socialMedia"]:checked');
+        const selectedValues = Array.from(checkboxes).map(checkbox => checkbox.value);
+
+        // Convert the array of values into a string, if needed
+        const selectedValuesString = selectedValues.join(', ');
+
+        console.log('Selected Social Media Platforms:', selectedValues);
+        console.log('Selected Values as String:', selectedValuesString);
+
+        // Collect form data
+        const formData = new FormData(form);
+        // formData.append('socialMedia', selectedValuesString); 
+        // // Send selected values as a string
+        formData.set('socialMedia', selectedValuesString);
+
+        const url = 'https://script.google.com/macros/s/AKfycbznLoWONj9awq9iojhzeSOjfE33MdDHEDKZxHobVFY5jhgJ-BsBwZSOPYLXoS5epBOo/exec'; // Replace with your actual Google Apps Script URL
+
+        try {
+          // Send the form data to the Google Apps Script
+          const response = await fetch(url, {
+            method: 'POST',
+            body: formData
+          });
+
+          // Check if the response is successful
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+
+          // Optionally handle the response
+          const result = await response.text();
+          console.log('Form submitted successfully:', result);
+
+          // Show a success message to the user
+          const successMessage = document.querySelector('.sent-message');
+          const errorMessage = document.querySelector('.error-message');
+
+          if (successMessage) successMessage.style.display = 'block';
+          if (errorMessage) errorMessage.style.display = 'none';
+        } catch (error) {
+          // Log and handle any errors that occurred during the fetch
+          console.error('Error submitting form:', error);
+
+          const successMessage = document.querySelector('.sent-message');
+          const errorMessage = document.querySelector('.error-message');
+
+          if (successMessage) successMessage.style.display = 'none';
+          if (errorMessage) errorMessage.style.display = 'block';
+        }
+      });
+    } else {
+      console.error('Form element not found. Make sure the form has the class "php-email-form".');
+    }
+  });
+</script>
+
+
+    <!-- <script src="assets/js/main.js"></script> -->
   </body>
 </html>

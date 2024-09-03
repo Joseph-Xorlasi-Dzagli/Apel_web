@@ -1,54 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Design Example</title>
-    <link rel="stylesheet" href="mainn.css">
-</head>
-<body>
-    <div class="container">
-        <section class="feature">
-            <img src="assets\img\EngageCustomers.jpeg" alt="Feature Image 1">
-            <div class="text">
-                <h2>Engage Customers Effortlessly</h2>
-                <p>Our service conversational AI seamlessly engages 
-                   customers and streamlines your sales process, 
-                   allowing you to focus on delivering your product.
-                </p>
-            </div>
-        </section>
-        <section class="feature">
-            <div class="text">
-                <h2>Boost Sales</h2>
-                <p>Enhance your market presence and boost your sales
-                   with Apsel Market, the go to platform where shoppers 
-                   can easily find your enterprise.
-                </p>
-            </div>
-            <img src="assets\img\BoostSales.jpeg" alt="Feature Image 2">
-        </section>
-        <section class="feature">
-            <img src="assets\img\BuildTrust.jpg" alt="Feature Image 3">
-            <div class="text">
-                <h2>Build Customer Trust</h2>
-                <p>Verify your business with Apsel and use our payment 
-                   recall solution to enhance customer trust.
-                </p>
-            </div>
-        </section>
-        <section class="feature">
-            <div class="text">
-                <h2>Insight-Driven Decisions</h2>
-                <p>Leverage Apsel Market and Sales Analytics to transform 
-                   data into actionable insights that drive business 
-                   growth and efficiency.
-                </p>
+    <script>
+      // Select the form element
+      const form = document.querySelector('.php-email-form');
+      
+      // Add an event listener to handle form submission
+      form.addEventListener('submit', async (e) => {
+        // Prevent the default form submission behavior
+        e.preventDefault();
 
-                <button>Purchase Now</button>
-            </div>
-            <img src="assets\img\DataInsights.webp" alt="Feature Image 3">
-        </section>
-    </div>
-</body>
-</html>
+                // Retrieve all checked checkboxes
+        const checkboxes = document.querySelectorAll('input[name="socialMedia"]:checked');
+        const selectedValues = Array.from(checkboxes).map(checkbox => checkbox.value);
+
+        // Convert the array of values into a string, if needed
+        const selectedValuesString = selectedValues.join(', ');
+
+        console.log('Selected Social Media Platforms:', selectedValues);
+        console.log('Selected Values as String:', selectedValuesString);
+
+
+        // Collect form data
+        const formData = new FormData(form);
+        formData.append('socialMedia', selectedValuesString); // Send selected values as an array
+
+        const url = 'https://script.google.com/macros/s/AKfycbznLoWONj9awq9iojhzeSOjfE33MdDHEDKZxHobVFY5jhgJ-BsBwZSOPYLXoS5epBOo/exec'; // Replace with your actual Google Apps Script URL
+
+        try {
+          // Send the form data to the Google Apps Script
+          const response = await fetch(url, {
+            method: 'POST',
+            body: formData
+          });
+
+          // Check if the response is successful
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+
+          // Optionally handle the response
+          const result = await response.text();
+          console.log('Form submitted successfully:', result);
+
+          // Show a success message to the user
+          document.querySelector('.sent-message').style.display = 'block';
+          document.querySelector('.error-message').style.display = 'none';
+          form.reset();
+
+        } catch (error) {
+          // Log and handle any errors that occurred during the fetch
+          console.error('Error submitting form:', error);
+          document.querySelector('.sent-message').style.display = 'none';
+          document.querySelector('.error-message').style.display = 'block';
+        }
+      });
+   </script>
