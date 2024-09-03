@@ -273,7 +273,7 @@
                 <img class= "mobile-img" src="assets\img\BoostSales.jpeg" alt="Feature Image 2 ">
                 <div class="text">
                     <h2>Boost Sales</h2>
-                    <p>Enhance your market presence and boost your sales
+                    <p>Expand your market presence and boost your sales
                       with Apsel Market, the go to platform where shoppers 
                       can easily find your enterprise.
                     </p>
@@ -940,11 +940,16 @@ improve your sales.
   document.addEventListener('DOMContentLoaded', () => {
     // Select the form element
     const form = document.querySelector('.php-email-form');
+
     
     // Check if the form element exists
     if (form) {
       // Add an event listener to handle form submission
       form.addEventListener('submit', async (e) => {
+        const Loading = document.querySelector('.loading');
+        if (Loading) Loading.style.display = 'block';
+
+
         // Prevent the default form submission behavior
         e.preventDefault();
 
@@ -988,6 +993,8 @@ improve your sales.
 
           if (successMessage) successMessage.style.display = 'block';
           if (errorMessage) errorMessage.style.display = 'none';
+          if (Loading) Loading.style.display = 'none';
+
         } catch (error) {
           // Log and handle any errors that occurred during the fetch
           console.error('Error submitting form:', error);
