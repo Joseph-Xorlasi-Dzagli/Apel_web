@@ -2043,6 +2043,27 @@ section,
   margin-bottom: 24px;
 }
 
+ .contact .popup-content .loading {
+  display: flex;
+  background: var(--background-color);
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 24px;
+}
+
+
+.contact .popup-content .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid var(--accent-color);
+  border-top-color: var(--background-color);
+  animation: animate-loading 1s linear infinite;
+}
+
 .contact .php-email-form .loading:before {
   content: "";
   display: inline-block;
@@ -2454,7 +2475,7 @@ section,
 }
 
 .popup-content button {
-    background: #007bff;
+    background: #00abc4;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -2463,6 +2484,6 @@ section,
 }
 
 .popup-content button:hover {
-    background: #0056b3;
+    background: #00c4ba;
 }
 
