@@ -909,8 +909,8 @@ section,
 .hero-overlay p {
   color: white;
   margin: 5px 0 2vw 0;
-  font-size: 18px;
-  line-height: 30px;
+  font-size: 20px;
+  line-height: 34px;
 }
 
 .btn-get-started {
@@ -1302,7 +1302,7 @@ section,
 .services .service-item {
   box-shadow: 0px 5px 90px 0px
     color-mix(in srgb, var(--default-color), transparent 90%);
-  padding: 50px 27px;
+  padding: 40px 27px;
   transition: all ease-in-out 0.4s;
   background-color: var(--contrast-color);
   height: 100%;
@@ -2395,7 +2395,7 @@ section,
 }
 
 .feature p {
-  font-size: 16px;
+  font-size: 20px;
   line-height: 1.6;
 }
 
