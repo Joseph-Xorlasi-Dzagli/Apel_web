@@ -2044,7 +2044,7 @@ section,
 }
 
  .contact .popup-content .loading {
-  display: flex;
+  display: block ;
   background: var(--background-color);
   text-align: center;
   padding: 15px;
