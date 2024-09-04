@@ -903,7 +903,7 @@ section,
   font-weight: bold;
   line-height: 5vw;
   color: white;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .hero-overlay p {
@@ -2345,7 +2345,7 @@ section,
 
 @media (max-width: 868px) {
   .hero-overlay {
-    top: 25%;
+    top: 12%;
     /* width: 70vw; */
   }
 
