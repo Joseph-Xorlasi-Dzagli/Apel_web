@@ -15,7 +15,8 @@
   --default-font: "Arial", system-ui, -apple-system, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Ariel", sans-serif; /*Jost*/
+  --heading-font: "Ariel", sans-serif;
+  /*Jost*/
   --nav-font: "Poppins", sans-serif;
 }
 
@@ -37,6 +38,27 @@
 
   /* Contrast Color - This is a color used for text when the background color is one of the heading, accent, or default colors. Its purpose is to ensure proper contrast and readability when placed over these more dominant colors. */
   --contrast-color: #ffffff;
+
+  /* Bauhaus Palette (Hero Section) */
+  --color-bauhaus-blue: #0052cc;
+  --color-bauhaus-red: #ff4d4d;
+  --color-bauhaus-yellow: #ffcc00;
+
+  /* Bento Grid Tonal Containers (Solutions Section) */
+  --color-bento-blue-bg: #eef2ff;
+  --color-bento-blue-text: #312e81;
+  --color-bento-yellow-bg: #fffbeb;
+  --color-bento-yellow-text: #78350f;
+  --color-bento-red-bg: #fef2f2;
+  --color-bento-red-text: #881337;
+  --color-bento-dark-bg: #f8fafc;
+  --color-bento-dark-text: #1e293b;
+
+  /* Additional Design Variables */
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --radius-card: 24px;
+  --radius-btn: 50px;
 }
 
 /* Nav Menu Colors */
@@ -220,7 +242,7 @@ h6 {
     padding-right: 0;
   }
 
-  .navmenu li:hover > a,
+  .navmenu li:hover>a,
   .navmenu .active,
   .navmenu .active:focus {
     color: var(--accent-color);
@@ -260,11 +282,11 @@ h6 {
 
   .navmenu .dropdown ul a:hover,
   .navmenu .dropdown ul .active:hover,
-  .navmenu .dropdown ul li:hover > a {
+  .navmenu .dropdown ul li:hover>a {
     color: var(--nav-dropdown-hover-color);
   }
 
-  .navmenu .dropdown:hover > ul {
+  .navmenu .dropdown:hover>ul {
     opacity: 1;
     top: 100%;
     visibility: visible;
@@ -276,7 +298,7 @@ h6 {
     visibility: hidden;
   }
 
-  .navmenu .dropdown .dropdown:hover > ul {
+  .navmenu .dropdown .dropdown:hover>ul {
     opacity: 1;
     top: 0;
     left: -100%;
@@ -310,7 +332,7 @@ h6 {
   }
 
   .navmenu .megamenu ul li a,
-  .navmenu .megamenu ul li:hover > a {
+  .navmenu .megamenu ul li:hover>a {
     padding: 10px 20px;
     font-size: 15px;
     color: var(--nav-dropdown-color);
@@ -322,15 +344,14 @@ h6 {
     color: var(--nav-dropdown-hover-color);
   }
 
-  .navmenu .megamenu:hover > ul {
+  .navmenu .megamenu:hover>ul {
     opacity: 1;
     top: 100%;
     visibility: visible;
   }
 
   .navmenu .dd-box-shadow {
-    box-shadow: 0px 0px 30px
-      color-mix(in srgb, var(--default-color), transparent 85%);
+    box-shadow: 0px 0px 30px color-mix(in srgb, var(--default-color), transparent 85%);
   }
 }
 
@@ -361,8 +382,7 @@ h6 {
     overflow-y: auto;
     transition: 0.3s;
     z-index: 9998;
-    box-shadow: 0px 0px 30px
-      color-mix(in srgb, var(--default-color), transparent 90%);
+    box-shadow: 0px 0px 30px color-mix(in srgb, var(--default-color), transparent 90%);
   }
 
   .navmenu a,
@@ -429,7 +449,7 @@ h6 {
     background-color: rgba(33, 37, 41, 0.1);
   }
 
-  .navmenu .dropdown > .dropdown-active {
+  .navmenu .dropdown>.dropdown-active {
     display: block;
     background-color: rgba(33, 37, 41, 0.03);
   }
@@ -456,7 +476,7 @@ h6 {
     transition: 0.3s;
   }
 
-  .mobile-nav-active .navmenu > ul {
+  .mobile-nav-active .navmenu>ul {
     display: block;
   }
 }
@@ -485,14 +505,11 @@ h6 {
   margin-top: 30px;
   padding: 6px 8px;
   position: relative;
-  background-color: color-mix(
-    in srgb,
-    var(--background-color),
-    transparent 50%
-  );
+  background-color: color-mix(in srgb,
+      var(--background-color),
+      transparent 50%);
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
-  box-shadow: 0px 2px 25px
-    color-mix(in srgb, var(--default-color), transparent 95%);
+  box-shadow: 0px 2px 25px color-mix(in srgb, var(--default-color), transparent 95%);
   display: flex;
   transition: 0.3s;
   border-radius: 50px;
@@ -506,11 +523,9 @@ h6 {
   border: 0;
   padding: 4px;
   width: 100%;
-  background-color: color-mix(
-    in srgb,
-    var(--background-color),
-    transparent 50%
-  );
+  background-color: color-mix(in srgb,
+      var(--background-color),
+      transparent 50%);
   color: var(--default-color);
 }
 
@@ -667,8 +682,7 @@ h6 {
 .footer .copyright {
   padding-top: 25px;
   padding-bottom: 25px;
-  border-top: 1px solid
-    color-mix(in srgb, var(--default-color), transparent 90%);
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
 .footer .copyright p {
@@ -784,11 +798,11 @@ h6 {
   font-size: 14px;
 }
 
-.page-title .breadcrumbs ol li + li {
+.page-title .breadcrumbs ol li+li {
   padding-left: 10px;
 }
 
-.page-title .breadcrumbs ol li + li::before {
+.page-title .breadcrumbs ol li+li::before {
   content: "/";
   display: inline-block;
   padding-right: 10px;
@@ -808,6 +822,7 @@ section,
 }
 
 @media (max-width: 1199px) {
+
   section,
   .section {
     scroll-margin-top: 66px;
@@ -862,57 +877,145 @@ section,
   margin-bottom: 0;
 }
 
-/*-/*-------------------------------------------------------------
-# Hero Section
+/*--------------------------------------------------------------
+# Hero Section (Bauhaus Design)
 --------------------------------------------------------------*/
 .hero {
   --background-color: #ffffff;
   width: 100%;
   position: relative;
-  display: flex;
-  padding: 0;
-  top: 0;
-  height: 43vw;
-  z-index: 19;
+  padding: 100px 0;
+  overflow: hidden;
+}
+
+/* Bauhaus Geometric Shapes */
+.shape {
+  position: absolute;
+  z-index: 0;
+  opacity: 0.6;
+}
+
+.shape-circle {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: var(--color-bauhaus-yellow);
+  top: -50px;
+  right: -50px;
+  filter: blur(60px);
+}
+
+.shape-triangle {
+  width: 0;
+  height: 0;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  border-bottom: 200px solid var(--color-bauhaus-red);
+  bottom: 10%;
+  left: -50px;
+  transform: rotate(15deg);
+  filter: blur(40px);
 }
 
 .hero-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  text-align: center;
   position: relative;
-  width: 100%;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
-.hero img {
-  width: 100vw;
-  height: auto;
-  top: 0;
+.hero h1 {
+  font-size: 4rem;
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  color: #0f172a;
 }
 
-.hero-overlay {
+.hero h1 span {
+  color: var(--color-bauhaus-blue);
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 span::before {
+  content: '';
   position: absolute;
-  top: 30%;
-  left: 4vw;
-  width: 45vw;
-  z-index: 10;
-  text-align: left;
-  color: white;
+  bottom: 8px;
+  left: -5px;
+  width: 100%;
+  height: 15px;
+  background: var(--color-bauhaus-yellow);
+  z-index: -1;
+  opacity: 0.5;
+  transform: rotate(-2deg);
 }
 
-.hero-overlay h1 {
-  margin: 0;
-  font-size: 5vw;
-  font-weight: bold;
-  line-height: 5vw;
-  color: white;
-  margin-bottom: 10px;
+.hero p {
+  font-size: 1.25rem;
+  color: #64748b;
+  margin-bottom: 40px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.hero-overlay p {
-  color: white;
-  margin: 5px 0 2vw 0;
-  font-size: 20px;
-  line-height: 34px;
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 30px;
 }
 
+.btn-modern {
+  padding: 12px 32px;
+  border-radius: var(--radius-btn);
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--color-bauhaus-blue);
+  color: white;
+  border: none;
+}
+
+.btn-primary:hover {
+  background: #003d99;
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: white;
+  border: 1px solid #e2e8f0;
+  color: #334155;
+}
+
+.btn-outline:hover {
+  background: #f8fafc;
+  transform: translateY(-2px);
+}
+
+.hero-img img {
+  border-radius: 24px;
+  box-shadow: var(--shadow-xl);
+  border: 1px solid #e2e8f0;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+/* Legacy button styles for compatibility */
 .btn-get-started {
   color: var(--contrast-color);
   background: var(--accent-color);
@@ -929,9 +1032,9 @@ section,
 }
 
 .hero .btn-watch-video {
-  display: flex; /* Ensures flex layout for centering */
-  align-items: center; /* Centers content vertically */
-  justify-content: center; /* Centers content horizontally */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 18px;
   transition: 0.5s;
   margin-left: 25px;
@@ -943,7 +1046,7 @@ section,
 }
 
 .btn-watch-video i {
-  font-size: 28px; /* Adjust icon size as needed */
+  font-size: 28px;
   transition: 0.3s;
   color: white;
   margin-right: 8px;
@@ -971,10 +1074,32 @@ section,
   display: none;
 }
 
+/* Mobile Hero Styles */
+@media (max-width: 768px) {
+  .hero {
+    padding: 60px 0;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-modern {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
 @media (max-width: 640px) {
   .hero {
-    height: 110vw;
+    height: auto;
     margin-top: 60px;
+    padding: 40px 0;
   }
 
   .hero-overlay h1 {
@@ -998,26 +1123,24 @@ section,
   }
 
   .button-container {
-    flex-direction: column; /* Stack buttons vertically */
-    align-items: flex-start; /* Align buttons to the start horizontally */
-    width: auto; /* Adjust width to fit content */
-    gap: 1rem; /* Adds space between the buttons */
-    /* margin-left: 4vw; Aligns with the hero-overlay left padding */
+    flex-direction: column;
+    align-items: flex-start;
+    width: auto;
+    gap: 1rem;
   }
 
   .hero .btn-watch-video {
     font-size: 18px;
     padding: 0 10px;
     margin-left: 0;
-    /* padding: 0.7vw 2vw; */
     border-radius: 90px;
     color: white;
     font-weight: 600;
     border: 2px solid #ffffff;
     width: 80vw;
-    display: flex; /* Maintain flex layout for centering */
-    align-items: center; /* Vertically centers content */
-    justify-content: center; /* Horizontally centers content */
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .hero-img {
@@ -1034,6 +1157,7 @@ section,
   0% {
     transform: translateY(10px);
   }
+
   100% {
     transform: translateY(-10px);
   }
@@ -1141,8 +1265,7 @@ section,
   position: relative;
   padding: 20px;
   margin-bottom: 20px;
-  box-shadow: 0px 5px 25px 0px
-    color-mix(in srgb, var(--default-color), transparent 90%);
+  box-shadow: 0px 5px 25px 0px color-mix(in srgb, var(--default-color), transparent 90%);
   background-color: var(--contrast-color);
   overflow: hidden;
 }
@@ -1300,8 +1423,7 @@ section,
 }
 
 .services .service-item {
-  box-shadow: 0px 5px 90px 0px
-    color-mix(in srgb, var(--default-color), transparent 90%);
+  box-shadow: 0px 5px 90px 0px color-mix(in srgb, var(--default-color), transparent 90%);
   padding: 40px 27px;
   transition: all ease-in-out 0.4s;
   background-color: var(--contrast-color);
@@ -1341,6 +1463,183 @@ section,
 
 .services .service-item:hover h4 a {
   color: var(--accent-color);
+}
+
+/*--------------------------------------------------------------
+# Bento Grid (Solutions Section)
+--------------------------------------------------------------*/
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.bento-item {
+  background: #f8fafc;
+  border-radius: 24px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  transition: 0.3s;
+}
+
+.bento-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+}
+
+.bento-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: 0.3s;
+}
+
+.bento-item:hover .bento-img {
+  transform: scale(1.05);
+}
+
+.bento-content {
+  padding: 32px;
+  position: relative;
+  z-index: 1;
+}
+
+.bento-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  font-size: 20px;
+}
+
+.bento-item h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+/* Bento Color Schemes */
+.bento-blue {
+  background: var(--color-bento-blue-bg);
+  color: var(--color-bento-blue-text);
+}
+
+.bento-blue h3,
+.bento-blue p {
+  color: var(--color-bento-blue-text);
+}
+
+.bento-blue .bento-icon {
+  background: rgba(255, 255, 255, 0.5);
+  color: var(--color-bento-blue-text);
+}
+
+.bento-yellow {
+  background: var(--color-bento-yellow-bg);
+  color: var(--color-bento-yellow-text);
+}
+
+.bento-yellow h3 {
+  color: var(--color-bento-yellow-text);
+}
+
+.bento-yellow p {
+  color: var(--color-bento-yellow-text);
+  opacity: 0.9;
+}
+
+.bento-yellow .bento-icon {
+  background: rgba(255, 255, 255, 0.5);
+  color: var(--color-bento-yellow-text);
+}
+
+.bento-red {
+  background: var(--color-bento-red-bg);
+  color: var(--color-bento-red-text);
+}
+
+.bento-red h3,
+.bento-red p {
+  color: var(--color-bento-red-text);
+}
+
+.bento-red .bento-icon {
+  background: rgba(255, 255, 255, 0.5);
+  color: var(--color-bento-red-text);
+}
+
+.bento-dark {
+  background: var(--color-bento-dark-bg);
+  color: var(--color-bento-dark-text);
+}
+
+.bento-dark h3,
+.bento-dark p {
+  color: var(--color-bento-dark-text);
+}
+
+.bento-dark .bento-icon {
+  background: white;
+  color: var(--color-bauhaus-blue);
+}
+
+/* Bento Grid Spans & Layout */
+.span-2 {
+  grid-column: span 2;
+  flex-direction: row;
+  align-items: center;
+  aspect-ratio: 2 / 1;
+}
+
+.span-2 .bento-img {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.span-2 .bento-content {
+  width: 50%;
+  padding-right: 20px;
+}
+
+/* Mobile Bento Grid */
+@media (max-width: 768px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .span-2 {
+    grid-column: auto;
+    flex-direction: column;
+    aspect-ratio: auto;
+    min-height: 300px;
+  }
+
+  .bento-item {
+    aspect-ratio: auto;
+    min-height: 300px;
+  }
+
+  .span-2 .bento-img {
+    position: relative;
+    width: 100%;
+    height: 200px;
+  }
+
+  .span-2 .bento-content {
+    width: 100%;
+    padding: 32px;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -1513,8 +1812,7 @@ section,
 # Team Section
 --------------------------------------------------------------*/
 .team .team-member {
-  box-shadow: 0px 2px 15px
-    color-mix(in srgb, var(--default-color), transparent 90%);
+  box-shadow: 0px 2px 15px color-mix(in srgb, var(--default-color), transparent 90%);
   position: relative;
   border-radius: 5px;
   transition: 0.5s;
@@ -1631,7 +1929,7 @@ section,
   color: var(--contrast-color);
 }
 
-.team .team-member .social a + a {
+.team .team-member .social a+a {
   margin-left: 8px;
 }
 
@@ -1644,8 +1942,7 @@ section,
 
 .pricing .pricing-item {
   background-color: var(--contrast-color);
-  box-shadow: 0 3px 20px -2px color-mix(in srgb, var(--default-color), transparent
-        90%);
+  box-shadow: 0 3px 20px -2px color-mix(in srgb, var(--default-color), transparent 90%);
   border-top: 4px solid var(--background-color);
   padding: 60px 40px;
   height: 100%;
@@ -1950,8 +2247,7 @@ section,
 # Contact Section
 --------------------------------------------------------------*/
 .contact .info-wrap {
-  box-shadow: 0px 0px 20px
-    color-mix(in srgb, var(--default-color), transparent 90%);
+  box-shadow: 0px 0px 20px color-mix(in srgb, var(--default-color), transparent 90%);
   border-top: 3px solid var(--accent-color);
   border-bottom: 3px solid var(--accent-color);
   padding: 30px;
@@ -2005,8 +2301,7 @@ section,
   padding: 30px;
   border-top: 3px solid var(--accent-color);
   border-bottom: 3px solid var(--accent-color);
-  box-shadow: 0px 0px 20px
-    color-mix(in srgb, var(--default-color), transparent 90%);
+  box-shadow: 0px 0px 20px color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
 @media (max-width: 575px) {
@@ -2043,8 +2338,8 @@ section,
   margin-bottom: 24px;
 }
 
- .contact .popup-content .loading {
-  display: block ;
+.contact .popup-content .loading {
+  display: block;
   background: var(--background-color);
   text-align: center;
   padding: 15px;
@@ -2084,11 +2379,9 @@ section,
   box-shadow: none;
   border-radius: 0;
   color: var(--default-color);
-  background-color: color-mix(
-    in srgb,
-    var(--background-color),
-    transparent 50%
-  );
+  background-color: color-mix(in srgb,
+      var(--background-color),
+      transparent 50%);
   border-color: color-mix(in srgb, var(--default-color), transparent 80%);
 }
 
@@ -2139,27 +2432,20 @@ section,
   position: relative;
 }
 
-.portfolio-details
-  .portfolio-details-slider
-  .swiper-pagination
-  .swiper-pagination-bullet {
+.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
   background-color: color-mix(in srgb, rgb(0, 171, 196, 0.85));
   opacity: 1;
 }
 
-.portfolio-details
-  .portfolio-details-slider
-  .swiper-pagination
-  .swiper-pagination-bullet-active {
+.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
   background-color: var(--accent-color);
 }
 
 .portfolio-details .portfolio-info {
   padding: 30px;
-  box-shadow: 0px 0 30px
-    color-mix(in srgb, var(--default-color), transparent 90%);
+  box-shadow: 0px 0 30px color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
 .portfolio-details .portfolio-info h3 {
@@ -2167,8 +2453,7 @@ section,
   font-weight: 700;
   margin-bottom: 20px;
   padding-bottom: 20px;
-  border-bottom: 1px solid
-    color-mix(in srgb, var(--default-color), transparent 85%);
+  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
 }
 
 .portfolio-details .portfolio-info ul {
@@ -2177,7 +2462,7 @@ section,
   font-size: 15px;
 }
 
-.portfolio-details .portfolio-info ul li + li {
+.portfolio-details .portfolio-info ul li+li {
   margin-top: 10px;
 }
 
@@ -2209,8 +2494,7 @@ section,
   display: block;
   line-height: 1;
   padding: 8px 0 8px 15px;
-  border-left: 3px solid
-    color-mix(in srgb, var(--default-color), transparent 70%);
+  border-left: 3px solid color-mix(in srgb, var(--default-color), transparent 70%);
   margin: 20px 0;
   color: color-mix(in srgb, var(--default-color), transparent 20%);
   transition: 0.3s;
@@ -2270,14 +2554,18 @@ section,
   display: flex;
   flex-wrap: wrap;
 }
+
 .two-columns li {
-  flex: 1 1 50%; /* Takes up 50% of the container width */
+  flex: 1 1 50%;
+  /* Takes up 50% of the container width */
   list-style-type: none;
   display: flex;
   align-items: center;
 }
+
 .two-columns i {
-  margin-right: 8px; /* Adds some space between icon and text */
+  margin-right: 8px;
+  /* Adds some space between icon and text */
 }
 
 .vertical-flex-container {
@@ -2286,8 +2574,10 @@ section,
   justify-content: center;
   align-items: center;
 }
+
 .flex-item {
-  margin: 10px 0; /* Optional: to add space between images */
+  margin: 10px 0;
+  /* Optional: to add space between images */
 }
 
 .container {
@@ -2300,19 +2590,24 @@ section,
 }
 
 .npc-image {
-  display: none; /* Hide image for PC */
+  display: none;
+  /* Hide image for PC */
 }
 
 @media only screen and (max-width: 767px) {
   .flex-item {
-    width: 150px; /* Adjust width of individual images for mobile */
+    width: 150px;
+    /* Adjust width of individual images for mobile */
   }
+
   .pc-image {
-    display: none; /* Hide image for PC */
+    display: none;
+    /* Hide image for PC */
   }
 
   .npc-image {
-    display: block; /* show image for PC */
+    display: block;
+    /* show image for PC */
   }
 }
 
@@ -2321,25 +2616,31 @@ section,
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px; /* Adjust spacing between images for PC */
+    gap: 20px;
+    /* Adjust spacing between images for PC */
   }
 }
 
 .logo {
-  width: 150px; /* Default width for all screens */
+  width: 150px;
+  /* Default width for all screens */
 }
 
 @media only screen and (max-width: 767px) {
   .logo {
-    width: 100px; /* Reduced width for mobile devices */
+    width: 100px;
+    /* Reduced width for mobile devices */
   }
 }
 
 .button-container {
   display: flex;
-  gap: 1rem; /* Adds space between the buttons */
-  justify-content: left; /* Aligns buttons to the left by default */
-  align-items: flex-start; /* Aligns items to the start vertically */
+  gap: 1rem;
+  /* Adds space between the buttons */
+  justify-content: left;
+  /* Aligns buttons to the left by default */
+  align-items: flex-start;
+  /* Aligns items to the start vertically */
   width: 80vw;
 }
 
@@ -2358,11 +2659,13 @@ section,
   .btn-watch-video {
     font-size: 18px;
     border-radius: 50px;
-    width: auto; /* Auto width to fit content */
+    width: auto;
+    /* Auto width to fit content */
   }
 
   .btn-watch-video i {
-    font-size: 28px; /* Adjust icon size as needed */
+    font-size: 28px;
+    /* Adjust icon size as needed */
   }
 }
 
@@ -2431,8 +2734,8 @@ section,
   }
 
   .feature h2 {
-  font-size: 30px;
-}
+    font-size: 30px;
+  }
 
   .desktop-img {
     display: none;
@@ -2445,45 +2748,46 @@ section,
 
 /* Popup Screen Styles */
 .popup-overlay {
-    display: none; /* Hidden by default */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7); /* Dark background */
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  /* Dark background */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }
 
 .popup-content {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-    width: 80%;
-    max-width: 400px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  width: 80%;
+  max-width: 400px;
 }
 
 .popup-content h2 {
-    margin: 0;
+  margin: 0;
 }
 
 .popup-content p {
-    margin: 15px 0;
+  margin: 15px 0;
 }
 
 .popup-content button {
-    background: #00abc4;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
+  background: #00abc4;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .popup-content button:hover {
-    background: #00c4ba;
+  background: #00c4ba;
 }
-
