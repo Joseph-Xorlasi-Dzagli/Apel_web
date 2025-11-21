@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero & Solutions Snippet</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <style>
+        /* --- CSS VARIABLES --- */
+        :root {
+            /* Global Colors */
+            --color-bg: #ffffff;
+            --color-bg-alt: #f8fafc;
+            --color-text-main: #334155;
+            --color-text-muted: #64748b;
+            --color-border: #e2e8f0;
+
+            /* Bauhaus Palette (Hero) */
+            --color-bauhaus-blue: #0052cc;
+            --color-bauhaus-red: #ff4d4d;
+            --color-bauhaus-yellow: #ffcc00;
+
+            /* Bento Tonal Containers (Solutions) */
+            --color-bento-blue-bg: #eef2ff;
+            --color-bento-blue-text: #312e81;
+            --color-bento-yellow-bg: #fffbeb;
+            --color-bento-yellow-text: #78350f;
+            --color-bento-red-bg: #fef2f2;
+            --color-bento-red-text: #881337;
+            --color-bento-dark-bg: #f8fafc;
+            --color-bento-dark-text: #1e293b;
+
+            /* Shadows */
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+
+            /* Spacing */
+            --radius-card: 24px;
+            --radius-btn: 50px;
+        }
+
+        /* --- BASE STYLES --- */
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--color-text-main);
+            background: var(--color-bg);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* --- BUTTONS --- */
+        .btn-modern {
+            padding: 12px 32px;
+            border-radius: var(--radius-btn);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--color-bauhaus-blue);
+            color: white;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background: #003d99;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: white;
+            border: 1px solid var(--color-border);
+            color: var(--color-text-main);
+        }
+
+        .btn-outline:hover {
+            background: var(--color-bg-alt);
+            transform: translateY(-2px);
+        }
+
+        /* --- HERO SECTION (Bauhaus) --- */
+        .hero {
+            padding-top: 100px;
+            padding-bottom: 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Shapes */
+        .shape {
+            position: absolute;
+            z-index: 0;
+            opacity: 0.6;
+        }
+
+        .shape-circle {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: var(--color-bauhaus-yellow);
+            top: -50px;
+            right: -50px;
+            filter: blur(60px);
+        }
+
+        .shape-triangle {
+            width: 0;
+            height: 0;
+            border-left: 100px solid transparent;
+            border-right: 100px solid transparent;
+            border-bottom: 200px solid var(--color-bauhaus-red);
+            bottom: 10%;
+            left: -50px;
+            transform: rotate(15deg);
+            filter: blur(40px);
+        }
+
+        .hero-container {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            color: #0f172a;
+        }
+
+        .hero h1 span {
+            color: var(--color-bauhaus-blue);
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 span::before {
+            content: '';
+            position: absolute;
+            bottom: 8px;
+            left: -5px;
+            width: 100%;
+            height: 15px;
+            background: var(--color-bauhaus-yellow);
+            z-index: -1;
+            opacity: 0.5;
+            transform: rotate(-2deg);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--color-text-muted);
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .hero-img img {
+            border-radius: 24px;
+            box-shadow: var(--shadow-xl);
+            border: 1px solid var(--color-border);
+            max-width: 80%;
+            margin: 0 auto;
+        }
+
+        /* --- SOLUTIONS SECTION (Bento Grid) --- */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .bento-item {
+            background: var(--color-bg-alt);
+            border-radius: 24px;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 1 / 1;
+            transition: 0.3s;
+        }
+
+        .bento-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .bento-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: 0.3s;
+        }
+
+        .bento-item:hover .bento-img {
+            transform: scale(1.05);
+        }
+
+        .bento-content {
+            padding: 32px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .bento-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            font-size: 20px;
+        }
+
+        .bento-item h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            margin-top: 0;
+        }
+
+        /* Bento Colors */
+        .bento-blue {
+            background: var(--color-bento-blue-bg);
+            color: var(--color-bento-blue-text);
+        }
+
+        .bento-blue h3,
+        .bento-blue p {
+            color: var(--color-bento-blue-text);
+        }
+
+        .bento-blue .bento-icon {
+            background: rgba(255, 255, 255, 0.5);
+            color: var(--color-bento-blue-text);
+        }
+
+        .bento-yellow {
+            background: var(--color-bento-yellow-bg);
+            color: var(--color-bento-yellow-text);
+        }
+
+        .bento-yellow h3 {
+            color: var(--color-bento-yellow-text);
+        }
+
+        .bento-yellow p {
+            color: var(--color-bento-yellow-text);
+            opacity: 0.9;
+        }
+
+        .bento-yellow .bento-icon {
+            background: rgba(255, 255, 255, 0.5);
+            color: var(--color-bento-yellow-text);
+        }
+
+        .bento-red {
+            background: var(--color-bento-red-bg);
+            color: var(--color-bento-red-text);
+        }
+
+        .bento-red h3,
+        .bento-red p {
+            color: var(--color-bento-red-text);
+        }
+
+        .bento-red .bento-icon {
+            background: rgba(255, 255, 255, 0.5);
+            color: var(--color-bento-red-text);
+        }
+
+        .bento-dark {
+            background: var(--color-bento-dark-bg);
+            color: var(--color-bento-dark-text);
+        }
+
+        .bento-dark h3,
+        .bento-dark p {
+            color: var(--color-bento-dark-text);
+        }
+
+        .bento-dark .bento-icon {
+            background: white;
+            color: var(--color-bauhaus-blue);
+        }
+
+        /* Bento Spans & Layout */
+        .span-2 {
+            grid-column: span 2;
+            flex-direction: row;
+            align-items: center;
+            aspect-ratio: 2 / 1;
+        }
+
+        .span-2 .bento-img {
+            width: 50%;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        .span-2 .bento-content {
+            width: 50%;
+            padding-right: 20px;
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .bento-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .span-2 {
+                grid-column: auto;
+                flex-direction: column;
+                aspect-ratio: auto;
+                min-height: 300px;
+            }
+
+            .bento-item {
+                aspect-ratio: auto;
+                min-height: 300px;
+            }
+
+            .span-2 .bento-img {
+                position: relative;
+                width: 100%;
+                height: 200px;
+            }
+
+            .span-2 .bento-content {
+                width: 100%;
+                padding: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero">
+        <div class="shape shape-circle"></div>
+        <div class="shape shape-triangle"></div>
+
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1>Drive sales and <br> <span>manage your store</span></h1>
+                <p>
+                    Seamlessly respond to customer enquiries, take orders, collect payment, track sales and manage your
+                    inventory.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn-modern btn-primary">Get Early Access</a>
+                    <a href="#" class="btn-modern btn-outline">
+                        <i class="bi bi-play-circle"></i> Watch Demo
+                    </a>
+                </div>
+            </div>
+            <div class="hero-img">
+                <!-- Placeholder image for snippet -->
+                <img src="assets/img/ApselVendor2.png" alt="Apsel Vendor Dashboard" />
+            </div>
+        </div>
+    </section>
+
+    <!-- SOLUTIONS SECTION -->
+    <section id="Solutions" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Solutions</h2>
+                <p>A comprehensive suite of tools for your enterprise.</p>
+            </div>
+
+            <div class="bento-grid">
+                <!-- Large Item (Top Wide) -->
+                <div class="bento-item span-2 bento-blue">
+                    <img src="assets/img/EngageCustomers.jpeg" alt="Service AI" class="bento-img">
+                    <div class="bento-content">
+                        <div class="bento-icon"><i class="bi bi-people"></i></div>
+                        <h3>Service Conversational AI</h3>
+                        <p>
+                            Guide customers through your service and sales process with timely responses and enhanced
+                            customer
+                            experience at your convenience.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Regular Item -->
+                <div class="bento-item bento-yellow">
+                    <img src="assets/img/BoostSales.jpeg" alt="Apsel Market" class="bento-img">
+                    <div class="bento-content">
+                        <div class="bento-icon"><i class="bi bi-shop"></i></div>
+                        <h3>Apsel Market</h3>
+                        <p>Grow your market presence and reach more shoppers on social media.</p>
+                    </div>
+                </div>
+
+                <!-- Regular Item -->
+                <div class="bento-item bento-red">
+                    <img src="assets/img/BuildTrust.jpg" alt="Payment & Escrow" class="bento-img">
+                    <div class="bento-content">
+                        <div class="bento-icon"><i class="bi bi-cash"></i></div>
+                        <h3>Payment & Escrow</h3>
+                        <p>Secure payments with our recall solution to build trust.</p>
+                    </div>
+                </div>
+
+                <!-- Wide Item (Bottom Wide) -->
+                <div class="bento-item span-2 bento-dark">
+                    <img src="assets/img/DataInsights.webp" alt="Analytics" class="bento-img">
+                    <div class="bento-content">
+                        <div class="bento-icon"><i class="bi bi-graph-up"></i></div>
+                        <h3>Market & Sales Analytics</h3>
+                        <p>Turn data into clear insights that help you understand customers and make smarter decisions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
